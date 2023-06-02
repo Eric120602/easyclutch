@@ -12,6 +12,7 @@ import {Box} from '@mui/material';
 import { ProSidebarProvider } from 'react-pro-sidebar';
 import { BrowserRouter } from 'react-router-dom';
 import AppRoutes from './router/AppRoutes';
+import 'react-big-calendar/lib/css/react-big-calendar.css';
 function App() {
   return (
    
@@ -41,7 +42,7 @@ const styles = {
   container: {
     display: 'flex',
     bgcolor: 'neutral.light',
-    height: 'calc(100% - 64px)'
+    height: '100%'
   },
   mainSection: {
     p: 4,
@@ -51,3 +52,4 @@ const styles = {
   }
 }
 export default App
+//calc(100% - 64px)

@@ -15,8 +15,12 @@
     "@fontsource/roboto": "^4.5.8",
     "@mui/icons-material": "^5.11.16",
     "@mui/material": "^5.12.1",
+    "@types/react-big-calendar": "^1.6.4",
+    "moment": "^2.29.4",
     "react": "^18.2.0",
+    "react-big-calendar": "^1.6.9",
     "react-dom": "^18.2.0",
+    "react-modal": "^3.16.1",
     "react-pro-sidebar": "^1.0.0",
     "react-router-dom": "^6.10.0"
   },

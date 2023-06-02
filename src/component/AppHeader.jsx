@@ -13,7 +13,7 @@ function AppHeader() {
             <Box
                 component={'img'}
                 sx={styles.appLogo}
-                src="/src/assets/easy.png" />
+                src="/src/assets/Easy_clutch.png" />
 
             <Box sx={{ flexGrow: 1 }} />
             <IconButton title="Sign Out" color="secondary">
