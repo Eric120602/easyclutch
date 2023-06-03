@@ -1,8 +1,8 @@
 import {Box, Typography,useTheme} from '@mui/material';
 import {Menu,MenuItem,Sidebar,useProSidebar} from "react-pro-sidebar";
-import SupervisorAccountIcon from '@mui/icons-material/SupervisorAccount';
 import AccessTimeFilledIcon from '@mui/icons-material/AccessTimeFilled';
 import DirectionsCarIcon from '@mui/icons-material/DirectionsCar';
+import HomeIcon from '@mui/icons-material/Home';
 import PaidIcon from '@mui/icons-material/Paid';
 import { Link, useNavigate } from "react-router-dom";
 function SideNav() {
@@ -15,8 +15,8 @@ function SideNav() {
     >
         
         <Menu>
-            <MenuItem active component={<Link to="/Trainerdetails"/>}icon={<SupervisorAccountIcon/>}>
-                <Typography variant="body 2">Trainer Details</Typography>
+            <MenuItem active component={<Link to="/Home"/>}icon={<HomeIcon/>}>
+                <Typography variant="body 2">Home</Typography>
             </MenuItem>
             <MenuItem active component={<Link to="/Vehiclemngmnt"/>} icon={<DirectionsCarIcon/>}>
                 <Typography variant="body 2">Vehicle Management</Typography>

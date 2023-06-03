@@ -2,10 +2,14 @@ const APIUrl = "http://localhost:5000"
 export default async function handler(method, url, body = {}) {
   let request = {
     method: method,
+    headers:{
+      "user-type":"trainer",
+      "Authorization":localStorage.getItem("auth-token")
+    }
   }
 
   if(method === "POST" || method === "PUT") {
-    request.headers = { 'Content-Type': 'application/json' }
+    request.headers['Content-Type'] = 'application/json' 
     request.body = JSON.stringify(body)
   }
   const response = await fetch(APIUrl+url, request);

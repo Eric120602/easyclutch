@@ -1,9 +1,9 @@
 import { Typography,Box } from "@mui/material";
-import BasicTable from "../component/BasicTable";
+import VehicleTable from "../component/VehicleTable";
 function Vehiclemngmnt() {
     return (  
         <Box sx={styles.columnsContainer}>
-        <BasicTable />
+        <VehicleTable />
         </Box>
     );
 }
