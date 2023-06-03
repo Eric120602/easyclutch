@@ -7,6 +7,7 @@ export default async function handler(method, url, body = {}) {
       "Authorization":localStorage.getItem("auth-token")
     }
   }
+console.log("Ethiyeeee")
 
   if(method === "POST" || method === "PUT") {
     request.headers['Content-Type'] = 'application/json' 

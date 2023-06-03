@@ -3,6 +3,7 @@ import { Calendar, momentLocalizer } from 'react-big-calendar';
 import moment from 'moment';
 import 'react-big-calendar/lib/css/react-big-calendar.css';
 
+
 const localizer = momentLocalizer(moment);
 
 class MyCalendar extends React.Component {
@@ -51,6 +52,8 @@ class MyCalendar extends React.Component {
           start: null,
           end: null,
           title: '',
+          colorEvento:"green",
+          color:"white"
         },
       }));
     }
@@ -68,6 +71,13 @@ class MyCalendar extends React.Component {
           events={events}
           onSelectSlot={this.handleSelectSlot}
           style={{ height: 500 }}
+          
+          eventPropGetter={(events) => {
+            const backgroundColor = events.colorEvento ? events.colorEvento : 'green';
+            const color = events.color ?events.color : 'white';
+            return { style: { backgroundColor ,color} }
+          }}
+          
         />
 
         {isScheduling && (

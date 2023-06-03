@@ -1,8 +1,6 @@
 import handler from "./handler"
 
-export const getVehicles=()=>{
-    return handler("GET","/vehicles")
-}
+
 
 export const getStudentall=()=>{
     return handler("GET","/")
@@ -11,4 +9,9 @@ export const getStudentall=()=>{
 export const getStudentexs=()=>{
     return handler("GET","/")
 }
+
+export const getFeedetails=()=>{
+    return handler("POST","/packages/type/payment/notify")
+}
+
 

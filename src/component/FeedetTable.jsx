@@ -7,23 +7,18 @@ import TableHead from '@mui/material/TableHead';
 import TableRow from '@mui/material/TableRow';
 import Paper from '@mui/material/Paper';
 import { useState,useEffect } from 'react';
-import { getVehicles } from '../api/vehicle';
+import { getFeedetails} from '../api/users';
 
-
-
-
-
-
-export default function VehicleTable() {
-  const [vehicles, setVehicles]=useState([])
+export default function Feedetails() {
+  const [fees,setFee ]=useState([])
   useEffect(()=>{
-    loadVehicles()
+    loadfee()
   },[])
-  const loadVehicles=async()=>{
+  const loadfee=async()=>{
    console.log("Ethi")
     try{
-      const response=await getVehicles()
-      setVehicles(response)
+      const response=await getFeedetails()
+      setFee(response)
 
     }
     catch(error){
@@ -36,25 +31,28 @@ export default function VehicleTable() {
         <TableHead>
           <TableRow>
             <TableCell>Id</TableCell>
-            <TableCell align="right">Model Name</TableCell>
-            <TableCell align="right">Registration&nbsp;</TableCell>
-            <TableCell align="right">Category&nbsp;</TableCell>
-            
+            <TableCell align="right">First name</TableCell>
+            <TableCell align="right">Last name&nbsp;</TableCell>
+            <TableCell align="right">Transaction id&nbsp;</TableCell>
+            <TableCell align="right">Vehicle type&nbsp;</TableCell>
+            <TableCell align="right">Verify&nbsp;</TableCell>
           </TableRow>
         </TableHead>
         <TableBody>
-          {vehicles.map((vehicle) => (
+          {fees.map((fee) => (
             <TableRow
-              key={vehicle.id}
+              key={fee.id}
               sx={{ '&:last-child td, &:last-child th': { border: 0 } }}
             >
               <TableCell component="th" scope="row">
-                {vehicle.id}
+                {fee.trainee_id}
               </TableCell>
-              <TableCell align="right">{vehicle.model_name}</TableCell>
-              <TableCell align="right">{vehicle.registration_number}</TableCell>
-              <TableCell align="right">{vehicle.type}</TableCell>
-            
+              <TableCell align="right">{fee.first_name}</TableCell>
+              <TableCell align="right">{fee.last_name}</TableCell>
+              <TableCell align="right">{fee.transaction_id}</TableCell>
+              <TableCell align="right">{fee.type}</TableCell>
+              <TableCell align="right"><button>verify</button></TableCell>
+              
             </TableRow>
           ))}
         </TableBody>
