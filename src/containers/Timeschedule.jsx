@@ -1,15 +1,14 @@
-import { Typography,Box} from "@mui/material";
+import { Typography, Box } from "@mui/material";
 import MyCalendar from "../component/BasicCalendar/Testt";
 
-
 function Timeschedule() {
-    return ( 
+    return (
         <Box sx={styles.details}>
-        <Typography>
-            <MyCalendar/>
-        </Typography>
+            <Typography>
+                <MyCalendar />
+            </Typography>
         </Box>
-     );
+    );
 }
 
 export default Timeschedule;
@@ -20,10 +19,10 @@ export default Timeschedule;
 
 const styles = {
     details: {
-        display:"grid",
-        position:"absolute",
-        left:280,
-        height:"95vh",
-         width:"70vw",
-  
-    }}
+        display: "grid",
+        position: "absolute",
+        left: 280,
+        height: "95vh",
+        width: "70vw",
+    }
+}

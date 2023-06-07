@@ -1,9 +1,10 @@
-import { Typography,Box } from "@mui/material";
+import { Typography, Box } from "@mui/material";
 import Feedetails from "../component/FeedetTable";
+
 function Feemngmnt() {
-    return (  
+    return (
         <Box sx={styles.columnsContainer}>
-        <Feedetails/>
+            <Feedetails />
         </Box>
     );
 }
@@ -16,8 +17,9 @@ export default Feemngmnt;
 
 const styles = {
     columnsContainer: {
-       
-        display:"flex",
-        position:"absolute",
-        left:280,
-    }}
+
+        display: "flex",
+        position: "absolute",
+        left: 280,
+    }
+}

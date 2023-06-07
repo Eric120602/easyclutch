@@ -3,7 +3,6 @@ import { Calendar, momentLocalizer } from 'react-big-calendar';
 import moment from 'moment';
 import 'react-big-calendar/lib/css/react-big-calendar.css';
 
-
 const localizer = momentLocalizer(moment);
 
 class MyCalendar extends React.Component {
@@ -51,7 +50,7 @@ class MyCalendar extends React.Component {
         currentEvent: {
           start: null,
           end: null,
-          title: '',
+          title: traineeId=1 ? username:"",
           colorEvento:"green",
           color:"white"
         },

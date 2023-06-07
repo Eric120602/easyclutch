@@ -1,0 +1,13 @@
+.my-div {
+    position: absolute;
+    left: 280px;
+    height: 300px;
+    top: 15%;
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    
+    background-color: #f2f2f2;
+    padding: 5px;
+    border: 1px solid #ccc;
+  }
