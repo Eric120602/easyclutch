@@ -2,18 +2,24 @@ import { AppBar, IconButton, Toolbar, Box, Typography } from "@mui/material";
 import MenuIcon from '@mui/icons-material/Menu';
 import { useProSidebar } from "react-pro-sidebar";
 import LogoutIcon from '@mui/icons-material/Logout';
+import { checkLogin, setLogin } from "../session/session";
 function AppHeader() {
     const { collapseSidebar, toggleSidebar, collapsed, broken } = useProSidebar();
 
     const logout = async (e) => {
-        window.location.replace('http://localhost:3000/home');
+        setLogin("0")
+        localStorage.removeItem("trainer-auth-token")
+        window.location.replace('/login');
     }
     return (
         <AppBar position="sticky" sx={styles.appBar}>
             <Toolbar >
-                <IconButton onClick={() => broken ? toggleSidebar() : collapseSidebar()} color="secondary">
-                    <MenuIcon />
-                </IconButton>
+                {
+                    checkLogin() &&
+                    <IconButton onClick={() => broken ? toggleSidebar() : collapseSidebar()} color="secondary">
+                        <MenuIcon />
+                    </IconButton>
+                }
                 <Box
                     component={'img'}
                     sx={styles.appLogo}

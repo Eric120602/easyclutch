@@ -24,9 +24,6 @@ function SideNav() {
             <MenuItem active component={<Link to="/Timeschedule" />} icon={<AccessTimeFilledIcon />}>
                 <Typography variant="body 2">Time Schedule</Typography>
             </MenuItem>
-            <MenuItem active component={<Link to="/Feemngmnt" />} icon={<PaidIcon />}>
-                <Typography variant="body 2">Fee Management</Typography>
-            </MenuItem>
             <MenuItem active component={<Link to="/Trainermngmnt" />} icon={<PersonAddIcon />}>
                 <Typography variant="body 2">Add Trainers</Typography>
             </MenuItem>
