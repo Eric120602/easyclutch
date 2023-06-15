@@ -4,6 +4,7 @@ import AccessTimeFilledIcon from '@mui/icons-material/AccessTimeFilled';
 import DirectionsCarIcon from '@mui/icons-material/DirectionsCar';
 import HomeIcon from '@mui/icons-material/Home';
 import PaidIcon from '@mui/icons-material/Paid';
+import PersonAddIcon from '@mui/icons-material/PersonAdd';
 import { Link, useNavigate } from "react-router-dom";
 function SideNav() {
     const { collapsed } = useProSidebar();
@@ -25,6 +26,9 @@ function SideNav() {
             </MenuItem>
             <MenuItem active component={<Link to="/Feemngmnt" />} icon={<PaidIcon />}>
                 <Typography variant="body 2">Fee Management</Typography>
+            </MenuItem>
+            <MenuItem active component={<Link to="/Trainermngmnt" />} icon={<PersonAddIcon />}>
+                <Typography variant="body 2">Add Trainers</Typography>
             </MenuItem>
         </Menu>
     </Sidebar>

@@ -29,24 +29,28 @@ export default function StdexsTable() {
       <Table sx={{ minWidth: 550 }} aria-label="simple table">
         <TableHead>
           <TableRow>
-            <TableCell>Id</TableCell>
+            <TableCell>#</TableCell>
             <TableCell align="right">First name</TableCell>
             <TableCell align="right">Last name&nbsp;</TableCell>
+            
             <TableCell align="right">Package&nbsp;</TableCell>
+            <TableCell align="right">Remaining sessions&nbsp;</TableCell>
           </TableRow>
         </TableHead>
         <TableBody>
-          {students.map((student) => (
+          {students.map((student,index) => (
             <TableRow
               key={student.traineeId}
               sx={{ '&:last-child td, &:last-child th': { border: 0 } }}
             >
               <TableCell component="th" scope="row">
-                {student.traineeId}
+                {index+1}
               </TableCell>
               <TableCell align="right">{student.firstName}</TableCell>
               <TableCell align="right">{student.lastName}</TableCell>
+              
               <TableCell align="right">{student.vehicleType}</TableCell>
+              <TableCell align="right">{student.remainingSessions}</TableCell>
             </TableRow>
           ))}
         </TableBody>
