@@ -1,5 +1,5 @@
 import { Typography, Box } from "@mui/material";
-import StdallTable from "../component/StdallTable";
+// import StdallTable from "../component/StdallTable";
 import StdexsTable from "../component/StdexsTable";
 
 function Home() {

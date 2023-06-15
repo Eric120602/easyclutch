@@ -1,5 +1,5 @@
 import { Typography, Box } from "@mui/material";
-import MyCalendar from "../component/Schedule";
+import MyCalendar from "../component/Calendar";
 
 function Timeschedule() {
     return (

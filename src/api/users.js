@@ -12,5 +12,3 @@ export const getFeedetails = () => {
     return handler("GET", "/packages/payments")
 }
 
-
-
