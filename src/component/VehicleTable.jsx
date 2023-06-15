@@ -62,8 +62,8 @@ export default function VehicleTable() {
                 <TableCell component="th" scope="row">
                   {vehicle.id}
                 </TableCell>
-                <TableCell align="right">{vehicle.model_name}</TableCell>
-                <TableCell align="right">{vehicle.registration_number}</TableCell>
+                <TableCell align="right">{vehicle.modelName}</TableCell>
+                <TableCell align="right">{vehicle.registrationNumber}</TableCell>
                 <TableCell align="right">{vehicle.type}</TableCell>
                 <TableCell align="right"><button onClick={() => remove(vehicle.id)}>delete</button></TableCell>
               </TableRow>

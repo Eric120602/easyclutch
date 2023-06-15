@@ -13,23 +13,29 @@ import { ProSidebarProvider } from 'react-pro-sidebar';
 import { BrowserRouter } from 'react-router-dom';
 import AppRoutes from './router/AppRoutes';
 import 'react-big-calendar/lib/css/react-big-calendar.css';
+import { checkLogin } from './session/session';
 function App() {
   return (
 
     <React.Fragment>
       <ThemeProvider theme={theme}>
         <ProSidebarProvider>
-          <CssBaseline />
-          <AppHeader />
+          <BrowserRouter>
+            <CssBaseline />
+            <AppHeader />
 
-          <Box sx={styles.container}>
-            <BrowserRouter>
+            <Box sx={styles.container}>
+              {
+              checkLogin() &&
               <SideNav />
+              }
               <Box component={'main'} sx={styles.mainSection}>
+
+                <AppRoutes />
               </Box>
-              <AppRoutes />
-            </BrowserRouter>
-          </Box>
+            </Box>
+          </BrowserRouter>
+
         </ProSidebarProvider>
 
       </ThemeProvider>
@@ -45,7 +51,7 @@ const styles = {
     height: '100%'
   },
   mainSection: {
-    p: 4,
+    //p: 4,
     width: '100%',
     height: '100%',
     overflow: 'auto',
