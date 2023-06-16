@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { registerTrainer, verifyOtp } from '../api/users';
+import { registerTrainer } from '../api/users';
 import '../App.css';
 
 
@@ -26,15 +26,15 @@ function Register() {
                 })
 
                 console.log("register user req success")
-                let val = Number(window.prompt("Enter the OTP: "));
+                //let val = Number(window.prompt("Enter the OTP: "));
                 try {
-                    await verifyOtp({
-                        username: username,
-                        otp: val,
-                    })
-                    console.log("verified")
+                    // await verifyOtp({
+                    //     username: username,
+                    //     otp: val,
+                    // })
+                    // console.log("verified")
                     alert("Successfully Registered...please login");
-                    window.location.replace('/login');
+                    window.location.replace('/Trainermngmnt');
                 }
                 catch (e) {
                     console.log("verification failed", e)
