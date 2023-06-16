@@ -6,8 +6,15 @@ import TableContainer from '@mui/material/TableContainer';
 import TableHead from '@mui/material/TableHead';
 import TableRow from '@mui/material/TableRow';
 import Paper from '@mui/material/Paper';
+import { styled } from '@mui/material/styles';
 import { useState, useEffect } from 'react';
 import { getStudentexs } from '../api/users';
+
+const Div = styled('div')(({ theme }) => ({
+  ...theme.typography.button,
+  backgroundColor: theme.palette.background.paper,
+  padding: theme.spacing(1),
+}));
 
 export default function StdexsTable() {
   const [students, setStudents] = useState([])
@@ -26,13 +33,13 @@ export default function StdexsTable() {
   }
   return (
     <TableContainer component={Paper}>
+      <Div>{"List of Trainees"}</Div>
       <Table sx={{ minWidth: 550 }} aria-label="simple table">
         <TableHead>
           <TableRow>
             <TableCell>#</TableCell>
             <TableCell align="right">First name</TableCell>
-            <TableCell align="right">Last name&nbsp;</TableCell>
-            
+            <TableCell align="right">Last name&nbsp;</TableCell>            
             <TableCell align="right">Package&nbsp;</TableCell>
             <TableCell align="right">Remaining sessions&nbsp;</TableCell>
           </TableRow>
@@ -48,7 +55,6 @@ export default function StdexsTable() {
               </TableCell>
               <TableCell align="right">{student.firstName}</TableCell>
               <TableCell align="right">{student.lastName}</TableCell>
-              
               <TableCell align="right">{student.vehicleType}</TableCell>
               <TableCell align="right">{student.remainingSessions}</TableCell>
             </TableRow>

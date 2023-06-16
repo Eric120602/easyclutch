@@ -1,8 +1,5 @@
 import handler from "./handler"
 
-export const getStudentall = () => {
-    return handler("GET", "/")
-}
 
 export const getStudentexs = () => {
     return handler("GET", "/trainees/bookings")
@@ -18,11 +15,12 @@ export const trainerLogin = (body) => {
 }
 
 export const registerTrainer = (body) => {
-    const url = `/trainees/register`
+    console.log(body)
+    const url = `/trainers/register`
     return handler("POST", url, body)
 }
 
-export const verifyOtp = (body) => {
-    const url = `/trainees/register/verify`
-    return handler("POST", url, body)
-}
+// export const verifyOtp = (body) => {
+//     const url = `/trainees/register/verify`
+//     return handler("POST", url, body)
+// }

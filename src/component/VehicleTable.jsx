@@ -6,9 +6,16 @@ import TableContainer from '@mui/material/TableContainer';
 import TableHead from '@mui/material/TableHead';
 import TableRow from '@mui/material/TableRow';
 import Paper from '@mui/material/Paper';
+import { styled } from '@mui/material/styles';
 import { useState, useEffect } from 'react';
 import { getVehicles, removeVehicles } from '../api/vehicle';
 import { Link } from 'react-router-dom';
+
+const Div = styled('div')(({ theme }) => ({
+  ...theme.typography.button,
+  backgroundColor: theme.palette.background.paper,
+  padding: theme.spacing(1),
+}));
 
 export default function VehicleTable() {
   const [vehicles, setVehicles] = useState([])
@@ -16,7 +23,6 @@ export default function VehicleTable() {
     loadVehicles()
   }, [])
   const loadVehicles = async () => {
-    console.log("Ethi")
     try {
       const response = await getVehicles()
       setVehicles(response)
@@ -33,6 +39,7 @@ export default function VehicleTable() {
       await removeVehicles({
         id: id
       })
+      loadVehicles()
     }
     catch (exception) {
       console.log("failed", exception)
@@ -43,14 +50,15 @@ export default function VehicleTable() {
   return (
     <div>
       <TableContainer component={Paper}>
+      <Div>{"Registered Vehicles"}</Div>
         <Table sx={{ minWidth: 550 }} aria-label="simple table">
           <TableHead>
             <TableRow>
               <TableCell>Id</TableCell>
-              <TableCell align="right">Model Name</TableCell>
-              <TableCell align="right">Registration&nbsp;</TableCell>
-              <TableCell align="right">Category&nbsp;</TableCell>
-              <TableCell align="right">Remove&nbsp;</TableCell>
+              <TableCell align="left">Model Name</TableCell>
+              <TableCell align="left">Registration&nbsp;</TableCell>
+              <TableCell align="left">Category&nbsp;</TableCell>
+              <TableCell align="left">Remove&nbsp;</TableCell>
             </TableRow>
           </TableHead>
           <TableBody>
@@ -62,10 +70,10 @@ export default function VehicleTable() {
                 <TableCell component="th" scope="row">
                   {vehicle.id}
                 </TableCell>
-                <TableCell align="right">{vehicle.modelName}</TableCell>
-                <TableCell align="right">{vehicle.registrationNumber}</TableCell>
-                <TableCell align="right">{vehicle.type}</TableCell>
-                <TableCell align="right"><button onClick={() => remove(vehicle.id)}>delete</button></TableCell>
+                <TableCell align="left">{vehicle.modelName}</TableCell>
+                <TableCell align="left">{vehicle.registrationNumber}</TableCell>
+                <TableCell align="center">{vehicle.type}</TableCell>
+                <TableCell align="left"><button onClick={() => remove(vehicle.id)}>delete</button></TableCell>
               </TableRow>
             ))}
           </TableBody>

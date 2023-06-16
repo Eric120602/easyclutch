@@ -26,7 +26,3 @@ export const registerUser = (body) => {
     return handler("POST", url, body)
 }
 
-// export const  = (body) => {
-//     const url = `/packages/type/payment/notify`
-//     return handler("POST", url,body)
-// }
