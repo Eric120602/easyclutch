@@ -21,6 +21,7 @@ const Registerroute = ifLoggedIn(Register)
 const AppRoutes = () => {
     return <Routes>
 
+        <Route path='/' element={<Trainerloginroute />} />
         <Route path='/login' element={<Trainerloginroute />} />
         <Route path='/Home' element={<Homeroute />} />
         <Route path='/Timeschedule' element={<Timescheduleroute />} />
