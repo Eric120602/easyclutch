@@ -80,7 +80,7 @@ function Trainerlogin() {
 
                         <button className='btn' onClick={login}>login</button>
                         <br />
-                        <Link to='/forgotPassword' className="reg">Forget password</Link>
+                        {/* <Link to='/forgotPassword' className="reg">Forget password</Link> */}
                         <br />
                         <p style={{color: "white"}}>{status}</p>
                     </form>

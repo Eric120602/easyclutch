@@ -25,10 +25,13 @@ function AppHeader() {
                     sx={styles.appLogo}
                     src="/src/assets/Easy_clutch.png" />
                 <Box sx={{ flexGrow: 1 }} />
+                {
+                    checkLogin() &&
                 <IconButton title="Sign Out" color="secondary">
-                    <Typography onClick={logout}>Logout</Typography>
-                    <LogoutIcon />
+                    <Typography onClick={logout}>Logout</Typography>                    
+                    <LogoutIcon />                    
                 </IconButton>
+                }
             </Toolbar>
         </AppBar>);
 
